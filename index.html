@@ -164,6 +164,127 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-计算课作业" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/18/计算课作业/">计算课作业</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/18/计算课作业/" class="archive-article-date">
+  	<time datetime="2019-08-18T06:43:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、一元函数"><a href="#一、一元函数" class="headerlink" title="一、一元函数"></a>一、一元函数</h2><p>1</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 解法1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun</span><span class="params">(x)</span></span></span><br><span class="line">    f = fsolve(@fun1,[<span class="number">1</span>]);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x)</span></span></span><br><span class="line">f(<span class="number">1</span>) = <span class="built_in">exp</span>(<span class="built_in">sin</span>(x)) +<span class="built_in">exp</span>(x) <span class="number">-24</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%  ans = 3.1352</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 解法2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span> = <span class="title">fun</span></span></span><br><span class="line">    x = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>  <span class="built_in">abs</span>( fun1(x)) &gt; <span class="number">1e-3</span> </span><br><span class="line">        x = x - fun1(x)/fun2(x);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x )</span></span></span><br><span class="line">    f = <span class="built_in">exp</span>(<span class="built_in">sin</span>(x)) + <span class="built_in">exp</span>(x) <span class="number">-24</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun2</span><span class="params">(x)</span></span></span><br><span class="line">    f = <span class="built_in">cos</span>(x) * <span class="built_in">exp</span>( <span class="built_in">sin</span>(x) ) + <span class="built_in">exp</span>(x);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>2.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 解法1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun</span><span class="params">(x)</span></span></span><br><span class="line">    f = fsolve(@fun1,[<span class="number">1</span>]);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x)</span></span></span><br><span class="line">f(<span class="number">1</span>) = <span class="built_in">sin</span>( <span class="built_in">exp</span>(x) +<span class="number">2</span>*x^<span class="number">2</span> +<span class="number">3</span>  )<span class="number">-0.5</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%  解法2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span> = <span class="title">fun</span></span></span><br><span class="line">    x = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>  <span class="built_in">abs</span>( fun1(x)) &gt; <span class="number">1e-3</span> </span><br><span class="line">        x = x - fun1(x)/fun2(x);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x )</span></span></span><br><span class="line">    f = <span class="built_in">sin</span>( <span class="built_in">exp</span>(x) + <span class="number">2</span>*x^<span class="number">2</span> +<span class="number">3</span> )- <span class="number">0.5</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun2</span><span class="params">(x)</span></span></span><br><span class="line">    f = <span class="built_in">cos</span>( <span class="built_in">exp</span>(x) + <span class="number">2</span>*x^<span class="number">2</span> +<span class="number">3</span> )* (<span class="built_in">exp</span>(x) + <span class="number">4</span>*x);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、多元函数"><a href="#二、多元函数" class="headerlink" title="二、多元函数"></a>二、多元函数</h2><p>1.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun</span></span></span><br><span class="line">    x = fsolve(@fun1,[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x)</span></span></span><br><span class="line">f(<span class="number">1</span>) = <span class="built_in">exp</span>(x(<span class="number">1</span>).^<span class="number">2</span> + x(<span class="number">2</span>).^<span class="number">2</span>) + <span class="built_in">sin</span>( <span class="number">2</span>*x(<span class="number">1</span>) +x(<span class="number">2</span>).^<span class="number">2</span> ) <span class="number">-10</span> ;</span><br><span class="line">f(<span class="number">2</span>) = x(<span class="number">1</span>)^<span class="number">2</span> <span class="number">-2</span>* x(<span class="number">2</span>) +x(<span class="number">2</span>).^<span class="number">2</span> <span class="number">-3</span>;</span><br><span class="line">f = f(:);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% x = 1.4736  -0.3522</span></span><br></pre></td></tr></table></figure>
+
+<p>2</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun</span></span></span><br><span class="line">    x = fsolve(@fun1,[<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x)</span></span></span><br><span class="line">f(<span class="number">1</span>) = <span class="number">2</span>*x(<span class="number">1</span>) + <span class="number">3</span>* x(<span class="number">2</span>)+ <span class="number">5</span>*x(<span class="number">3</span>);</span><br><span class="line">f(<span class="number">2</span>) = x(<span class="number">1</span>) + x(<span class="number">2</span>) - x(<span class="number">3</span>);</span><br><span class="line">f(<span class="number">3</span>) = <span class="number">3</span>*x(<span class="number">1</span>) -x(<span class="number">2</span>) +<span class="number">2</span>*x(<span class="number">3</span>);</span><br><span class="line">f = f(:);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% x =  1.0e-16 *</span></span><br><span class="line"></span><br><span class="line">         <span class="number">0</span>         <span class="number">0</span>   <span class="number">-0.2776</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="三、数值微积分"><a href="#三、数值微积分" class="headerlink" title="三、数值微积分"></a>三、数值微积分</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">clear,clc</span><br><span class="line">x = [<span class="number">1</span> <span class="number">2</span> <span class="number">5</span> <span class="number">9</span> <span class="number">16</span>];</span><br><span class="line">y = [<span class="number">1</span> <span class="number">3</span> <span class="number">4</span> <span class="number">6</span> <span class="number">9</span>];</span><br><span class="line">yd = diff(y)./diff(x);</span><br><span class="line">I = trapz(x,y);  <span class="comment">% 积分</span></span><br><span class="line">yd(<span class="number">2</span>)            <span class="comment">%x = 5 处导数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="四、微分方程"><a href="#四、微分方程" class="headerlink" title="四、微分方程"></a>四、微分方程</h2><p>1.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span> = <span class="title">fun</span></span></span><br><span class="line">    x = <span class="number">0</span>: <span class="number">0.01</span> : <span class="number">1</span>;</span><br><span class="line">    y(<span class="number">1</span>) = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">2</span>: <span class="built_in">length</span>(x)</span><br><span class="line">        y(<span class="built_in">i</span>) = y(<span class="built_in">i</span><span class="number">-1</span>) + fun1(x(<span class="built_in">i</span><span class="number">-1</span>),y(<span class="built_in">i</span><span class="number">-1</span>)) *(x(<span class="built_in">i</span>) - x(<span class="built_in">i</span><span class="number">-1</span>));</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x,y)</span></span></span><br><span class="line"></span><br><span class="line">    f = <span class="built_in">sin</span>(x) + x^<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>2.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[y,z]</span> = <span class="title">fun</span></span></span><br><span class="line">    x = <span class="number">0</span>: <span class="number">0.01</span> : <span class="number">1</span>;</span><br><span class="line">    y(<span class="number">1</span>) = <span class="number">1</span>;z(<span class="number">1</span>) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">2</span>: <span class="built_in">length</span>(x)</span><br><span class="line">        y(<span class="built_in">i</span>) = y(<span class="built_in">i</span><span class="number">-1</span>) + fun1(x(<span class="built_in">i</span><span class="number">-1</span>),y(<span class="built_in">i</span><span class="number">-1</span>),z(<span class="built_in">i</span><span class="number">-1</span>)) *(x(<span class="built_in">i</span>) - x(<span class="built_in">i</span><span class="number">-1</span>));</span><br><span class="line">        z(<span class="built_in">i</span>) = z(<span class="built_in">i</span><span class="number">-1</span>) + fun2( x(<span class="built_in">i</span><span class="number">-1</span>),y(<span class="built_in">i</span><span class="number">-1</span>), z(<span class="built_in">i</span><span class="number">-1</span>) ) *(x(<span class="built_in">i</span>) - x(<span class="built_in">i</span><span class="number">-1</span>));</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    y,z</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun1</span><span class="params">(x,y,z)</span></span></span><br><span class="line"></span><br><span class="line">    f = <span class="built_in">sin</span>(x) + y*z;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun2</span><span class="params">(x,y,z)</span></span></span><br><span class="line"></span><br><span class="line">    f = <span class="built_in">sin</span>(y)+ x*z;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>3.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> = <span class="title">fun</span> </span></span><br><span class="line">    [x, y]  =  ode45( @vdp1,[<span class="number">0</span>:<span class="number">0.01</span>:<span class="number">20</span>],[<span class="number">0</span>;<span class="number">0.1</span>] );</span><br><span class="line">    x,y</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dydx</span> = <span class="title">vdp1</span><span class="params">(x, y)</span></span></span><br><span class="line">    dydx = [y(<span class="number">2</span>); -<span class="built_in">exp</span>(y(<span class="number">1</span>))<span class="number">-2</span>*x*y(<span class="number">1</span>)];</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="五、"><a href="#五、" class="headerlink" title="五、"></a>五、</h2><p>1.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 解法1</span></span><br><span class="line">dd =  @(x)<span class="built_in">exp</span>(<span class="built_in">sin</span>(x)) + <span class="built_in">exp</span>(x);</span><br><span class="line"></span><br><span class="line">[x,y] = fmincon(dd,<span class="number">5</span>,[],[],[],[],<span class="number">-10</span>,<span class="number">10</span>)</span><br><span class="line"><span class="comment">%  y = 0.3683</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%  解法2</span></span><br><span class="line">y= [];</span><br><span class="line">x = <span class="number">-10</span> : <span class="number">0.01</span> : <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="built_in">length</span>(x)</span><br><span class="line">    y(<span class="built_in">i</span>) = <span class="built_in">exp</span>(<span class="built_in">sin</span>(x(<span class="built_in">i</span>))) + <span class="built_in">exp</span>(x(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">ymin = <span class="built_in">min</span>(y)</span><br></pre></td></tr></table></figure>
+
+<p>2.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">    
+    
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+      |阅读量：<span id="busuanzi_value_page_pv"></span>次
+    </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/18/计算课作业/">展开全文 >></a>
+        </p>
+      
+    
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-GitHub-Desktop上传文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1053,19 +1174,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
               </li>
             
             <div class="clearfix"></div>
