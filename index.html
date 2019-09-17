@@ -164,6 +164,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数学建模国赛小结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/17/数学建模国赛小结/">数学建模国赛小结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/17/数学建模国赛小结/" class="archive-article-date">
+  	<time datetime="2019-09-17T01:46:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数学建模国赛小结"><a href="#数学建模国赛小结" class="headerlink" title="数学建模国赛小结"></a><code>数学建模国赛小结</code></h1><hr>
+<ul>
+<li><input disabled type="checkbox"> <a href="https://luodaxiaoxi.github.io/" target="_blank" rel="noopener">国赛刚结束，准备缓两天再去搞其它的东西，趁现在有时间写个总结．</a></li>
+</ul>
+<p><strong>基础信息</strong></p>
+<ul>
+<li>选题：B</li>
+<li>队伍配置：2018五一建模二等+校赛一等的三个建模小白</li>
+<li>专业背景：信息(数学)+电子+电子，两男一女</li>
+</ul>
+<p><img src="D:%5CUsers%5C44293%5CDesktop%5Cblog%5Csource%5Casserts%5C%E7%BC%A9%E7%95%A5%E5%9B%BE-1568624120636.png" alt="缩略图"></p>
+<p>​    由于彩色的图片看起来比较扎眼，论文所有的图表都用的比较简约的黑白色调．</p>
+<ul>
+<li><input disabled type="checkbox"> 比赛前夕及选题过程</li>
+</ul>
+<p>​    为方便做题和老师的统一管理，老师们借了理学院的五楼和六楼所有的会议室、教研室和办公室等供我们做题．９.12上午，每个队都带着工具去把场地打扫了一遍，我们队被单独分到一个环境还不错的教研室．然后下午就搬东西过去入住了．下午5.30吃完饭洗完澡到场地等发题，本以为鄢老师会提前给我们题，没想到还是等到了六点自己去官网下的:cry:．</p>
+<p>​    拿到题人都有点懵了，什么鬼．．一眼看过去三道都是机理题，老师之前跟我们说两道数据一道机理的。然后只能一题一题看过去了，A题高压油管的压力控制，题目三页加三个附件的数据，第一感觉是需要搞清高压油管的原理，有点复杂就先往下一题看了．B题“同心协力”策略研究又是一个物理题，2016年系泊系统的设计有些类似，对各种力各种运动状态分析得到结论，C题需要自己找数据．最后与队友们讨论了半个小时，得到以下结论：A题和B题为机理题，A题应该可以找到相关的研究，B题估计时某个出题人玩了这个游戏灵光一现让我们研究这个，估计是一点参考的资料都找不到（最后确实是这样），C题是数据题且需要找数据直接pass．比较AB两题，A题结构复杂从一个喷油嘴到两个喷油且题目较长分析起来绝对很麻烦，然后就愉快地确定了B题:smile:．最终确定题大概是在七点．</p>
+<ul>
+<li><input disabled type="checkbox"> 做题过程</li>
+</ul>
+<p>​     9.12晚上  七点到八点三个人分开看题，每个人都有自己的思路，然后从八点到十二点对每个问题分别进行了讨论，确定后面该怎么做．</p>
+<p>​    9.13做完了第一问且把第二问的模型建好了，晚上一直到了两点左右．</p>
+<p>​    9.14早上6点起，到中午12点大概把第二问给做完了，下午到晚上完成了第三问．</p>
+<p>​    9.14晚上我们是选择了通宵的，硬肝第四问，然鹅一晚上我们什么思路都没想出来，还搞得白天很疲惫，有点难受，然后在白天为了赶着先做完，就想着先确定一个还过的去的方案先写完，最后在中午之前完成了第四问，下午三点前出了初稿．三点到七点半一直在改论文，包装论文:smirk:,这期间我们的论文都不知道打印了多少遍。。七点半把MD5码交了一次，然后再继续修改，在九点半交了最终的MD5码，十点提交论文．　</p>
+<ul>
+<li><input disabled type="checkbox"> 大概思路</li>
+</ul>
+<p>第一问：建坐标系表示各个队员的力，对运动状态分析，碰撞时为完全弹性碰撞，动量守恒动能守恒，通过分析，建立颠球高度与发力时机、力度、队员人数以及绳竖直夹角关系的模型．求解时，将颠球高度等于0.4m代入模型进行求解，给出几组固定参数下的最佳策略．</p>
+<p>第二问：首先分析题目所给的9组数据吧，其实是有规律的，前三组是同时发力不同力度，4-6为异时发力同一力度、后三组为异时发力不同力度，对这三种情况分别建立模型，我们主要用到了刚体力学相关的知识，利用转动定律推导角度．</p>
+<p>第三问：根据第二问，实际情况下鼓面会倾斜，然后我们就考虑了鼓面在不同倾斜角度时，能够使该项目继续进行下去的策略，并对问题一中的策略进行改进．</p>
+<p>第四问：看作是第三问的逆过程，分析根第三问类似，将其反过来看即可，为了简便，我们对十个队员进行了编号，并对一种实际情况下球的偏角进行了讨论，给出了一系列的调整策略，若团队配合默契度较高，选择更省力的多人调整策略，若配合默契度较低，确保能使项目进行下去应选用花力大的单人调整策略．</p>
+<ul>
+<li><input disabled type="checkbox"> 感受</li>
+</ul>
+<p>​    经历了四天做题还是很疲惫的，但是能做出题确实是很开心的．真的很感谢两位队友，一起做三天的题一起参加国赛，真的很幸运．</p>
+<p>​    团队的配合十分重要，我们团队两个男生一个女生，分工并不会很明确，主要就是要协调好，保持良好的关系和有活跃的气氛是做出好论文的前提！然后就是多交流，三个人在没有思路的时候各干各的是一点效率都没有的，也干不出什么东西来，一定要打破僵局，大家讨论才能确定思路。</p>
+<p>​    最后，大概要有两个多月才能出成绩，我们学校有15个队选了A题，11个队选了B题，17个队选C题，根据往年的情况，一般每道题都至少会有个国一、1个国二（去年的B题3个国一3个国二），所以按道理来说我们B题的情况还是很乐观的。在有个问题上我们没做好,虽然跟自己的老师说的时候把他给说服了，但还是觉得有点牵强，希望专家们别那么严格吧．．毕竟这么难:dog:．</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">    
+    
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+      |阅读量：<span id="busuanzi_value_page_pv"></span>次
+    </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/17/数学建模国赛小结/">查看全文 >></a>
+        </p>
+      
+    
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-笔记：一些需要注意的东西" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -215,11 +344,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">写作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">写作</a>
         		</li>
       		
 		</ul>
@@ -435,11 +564,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -1262,15 +1391,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
+                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1282,23 +1423,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">写作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
               </li>
             
             <div class="clearfix"></div>
