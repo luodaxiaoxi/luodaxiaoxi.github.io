@@ -164,6 +164,125 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C-笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/08/C-笔记/">C++笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/08/C-笔记/" class="archive-article-date">
+  	<time datetime="2019-10-08T12:09:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ispunct</span>(c)      <span class="comment">//判断c是否为符号，是则返回True</span></span><br><span class="line"><span class="built_in">isspace</span>(t)      <span class="comment">//判断是否为空格，为空格返回True</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> c:str)		<span class="comment">//范围for 遍历序列中每一个元素</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; c&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<p>小写转换为大写</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">toupper</span>(c);  <span class="comment">//其中c为字符型</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="string"><a href="#string" class="headerlink" title="string"></a>string</h4><p>若是要改变一个<strong>string</strong>类型中的大小写，要用到for和引用  <strong>见《c++ primer》83页</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt;str ;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c:str)</span><br><span class="line">		c = <span class="built_in">toupper</span>(c);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;str &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="容器vector"><a href="#容器vector" class="headerlink" title="容器vector"></a>容器vector</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;  str&#123;<span class="string">"luo"</span>,<span class="string">"da"</span>,<span class="string">"xiao"</span>&#125;;  <span class="comment">// 列表初始化 , 此处用大括号</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;  ivec(<span class="number">10</span>,<span class="number">1</span>) ；				<span class="comment">//  初始化10个int型元素，值为1</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; svec(<span class="number">10</span>,<span class="string">"luodaxiao"</span>);    <span class="comment">// 初始化10个string元素，每个都为“luodaxiao”</span></span><br></pre></td></tr></table></figure>
+
+<p>列表初始化还是元素初始化？</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ivec(<span class="number">10</span>);    <span class="comment">//初始化10个元素，均为1</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ivec&#123;<span class="number">10</span>&#125;;    <span class="comment">//初始化1个元素，为10</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ivec(<span class="number">10</span>,<span class="number">1</span>);  <span class="comment">//10个1</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ivec&#123;<span class="number">10</span>,<span class="number">1</span>&#125;;  <span class="comment">//两个元素：10和1</span></span><br></pre></td></tr></table></figure>
+
+<p>向vector对象中添加元素</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v.push_back()</span><br></pre></td></tr></table></figure>
+
+<p>例如</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> word;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; text;		<span class="comment">//空vector对象</span></span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; word)</span><br><span class="line">	text.push_back(word);	<span class="comment">//把word添加到text末尾</span></span><br></pre></td></tr></table></figure>
+
+<p>只能对已存在的元素执行下标操作</p>
+<hr>
+<h4 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h4><h5 id="二分搜索"><a href="#二分搜索" class="headerlink" title="二分搜索"></a>二分搜索</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//text 必须是有序的</span></span><br><span class="line"><span class="comment">//beg 和end表示搜索范围</span></span><br><span class="line"><span class="comment">//sought为要查找的数</span></span><br><span class="line"><span class="keyword">auto</span> beg = text.begin(), end = text.end;</span><br><span class="line">	<span class="keyword">auto</span> mid = text.begin() + (end - beg) / <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">while</span> (mid != end &amp;&amp; *mid != sought)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (sought &lt; *mid)</span><br><span class="line">			end = mid;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			beg = mid + <span class="number">1</span>;</span><br><span class="line">		mid = beg + (end - beg) / <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">    
+    
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+      |阅读量：<span id="busuanzi_value_page_pv"></span>次
+    </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/08/C-笔记/">查看全文 >></a>
+        </p>
+      
+    
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-c-习题-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1160,147 +1279,6 @@
 
 
   
-    <article id="post-hexo-GitHub博客搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/15/hexo-GitHub博客搭建/">hexo+GitHub博客搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/15/hexo-GitHub博客搭建/" class="archive-article-date">
-  	<time datetime="2019-07-15T01:25:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>感谢程序羊CodeSheep的博客搭建视频。他的博客<a href="https://www.codesheep.cn/" target="_blank" rel="noopener">CodeSheep</a></p>
-<p>这里来说一下win10下搭建博客的过程。</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="1、安装git"><a href="#1、安装git" class="headerlink" title="1、安装git"></a>1、安装git</h2><p>​    进入<a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a>找到Windows的下载。git安装成功的标志是在桌面上任意地方点击右键都会有Git GUI和Git Bash。</p>
-<p>Git Bash相当于Linux的命令行操作。</p>
-<p><img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563154739900.png" alt="1563154739900"></p>
-<h2 id="2、安装node-js"><a href="#2、安装node-js" class="headerlink" title="2、安装node.js"></a>2、安装node.js</h2><p>​    同样是在<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js官网</a>下载，安装很简便一路next就行。</p>
-<p><img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563155004945.png" alt="1563155004945"></p>
-<h1 id="安装hexo博客框架"><a href="#安装hexo博客框架" class="headerlink" title="安装hexo博客框架"></a>安装hexo博客框架</h1><h2 id="1、什么是hexo"><a href="#1、什么是hexo" class="headerlink" title="1、什么是hexo"></a>1、什么是hexo</h2><p><br>Hexo 是<strong>一个快速、简洁且高效的博客框架。 **Hexo</strong> 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h2 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h2><p><br>在桌面任意处右键，打开Git Bash Here,得到如下界面。</p>
-<p><img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563155648282.png" alt="1563155648282"></p>
-<p>由于npm速度可能比较慢，利用淘宝的镜像源安装cnpm</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p>利用cnpm安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后可以用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v    #验证hexo版本,确认是否安装</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、生成本地博客"><a href="#3、生成本地博客" class="headerlink" title="3、生成本地博客"></a>3、生成本地博客</h2><p>建立一个文件夹:blog</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
-
-<p>输入pwd看当前位置，当然git bash的每个命令行都会显示当前位置。这个可忽略</p>
-<p>进入blog文件夹</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog/</span><br></pre></td></tr></table></figure>
-
-<p>初始化hexo.生成博客，这里需要大概2分钟</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p>在桌面打开blog文件夹会发现出现了很多中间文件。</p>
-<p>启动hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s        # hexo server简写，启动命令</span><br></pre></td></tr></table></figure>
-
-<p>会出现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INF0  Start processing</span><br><span class="line">INF0  Hexo is running at http://localhost:4000.Press Ctrl + C to stop.</span><br></pre></td></tr></table></figure>
-
-<p>这就生成了一个本地网站。在浏览器打开<a href="http://localhost:4000就能出现hexo博客了。" target="_blank" rel="noopener">http://localhost:4000就能出现hexo博客了。</a></p>
-<p>初始化会默认有一篇名为hello world 的博客</p>
-<p>我们可以新建一篇文章</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的第一篇文章&quot;</span><br></pre></td></tr></table></figure>
-
-<p>这样就在blog/source/_posts/下生成一个名为”我的第一篇文章.md”的文章。可以用Typora等markdown编辑器编辑。</p>
-<h2 id="4、推向远端-将博客部署到GitHub"><a href="#4、推向远端-将博客部署到GitHub" class="headerlink" title="4、推向远端|将博客部署到GitHub"></a>4、推向远端|将博客部署到GitHub</h2><h3 id="1、若没有账号在GitHub创建一个"><a href="#1、若没有账号在GitHub创建一个" class="headerlink" title="1、若没有账号在GitHub创建一个"></a>1、若没有账号在GitHub创建一个</h3><p>​    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
-<h3 id="2、新建一个reposity-仓库"><a href="#2、新建一个reposity-仓库" class="headerlink" title="2、新建一个reposity(仓库)"></a>2、新建一个reposity(仓库)</h3><p>​    <img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563157689823.png" alt="1563157689823"></p>
-<p><br>然后填写资料</p>
-<p><img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563157799921.png" alt="1563157799921"></p>
-<p>​    这里要注意GitHub的命名规范Repository name 必须为 Owner.github.io</p>
-<p>​    比如我的就是luodaxiaoxi.github.io,Descripition可写可不写。然后create就行</p>
-<h3 id="3、在blog目录下装一个git插件"><a href="#3、在blog目录下装一个git插件" class="headerlink" title="3、在blog目录下装一个git插件"></a>3、在blog目录下装一个git插件</h3><p>打开命令行进入blog</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog/</span><br></pre></td></tr></table></figure>
-
-<p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、设置根目录下的配置文件"><a href="#4、设置根目录下的配置文件" class="headerlink" title="4、设置根目录下的配置文件"></a>4、设置根目录下的配置文件</h3><p>进入blog文件夹，用Typora打开_config.yml</p>
-<p><img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563158225945.png" alt="1563158225945"></p>
-<p>到文件的最低端</p>
-<p><img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563158322103.png" alt="1563158322103"></p>
-<p>type: 后面写上git，加一个repo: +你GitHub仓库的地址</p>
-<p><strong>注意冒号后面都有一个空格，很关键</strong></p>
-<p>这是我的配置</p>
-<p><img src="C:%5CUsers%5C44293%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563158593609.png" alt="1563158593609"></p>
-<h3 id="5、可以远端访问"><a href="#5、可以远端访问" class="headerlink" title="5、可以远端访问"></a>5、可以远端访问</h3><p>通过网址: 用户名.github.io访问</p>
-<p>比如<a href="luodaxiaoxi.github.io">我的博客</a>:luodaxiaoxi.github.io</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">    
-    
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">-博客搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-      |阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/15/hexo-GitHub博客搭建/">查看全文 >></a>
-        </p>
-      
-    
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1407,11 +1385,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1427,23 +1417,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">代码</a>
+                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
               </li>
              
               <li class="article-tag-list-item">
