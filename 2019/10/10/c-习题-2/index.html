@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>c++习题 1 | Luo Da Xiao</title>
+  <title>c++习题(2) | Luo Da Xiao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章 12345678910111213141516171819202122232425262728293031#include &amp;lt;iostream&amp;gt;using namespace std;template&amp;lt;typename T&amp;gt;T sort(T &amp;amp;x,T &amp;amp;y,T &amp;amp;z)&amp;#123;	T temp;	T a[3] = &amp;#123; x,y,z &amp;">
-<meta name="keywords" content="c++,代码">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839#include &amp;lt;iostream&amp;gt;using namespace std;class Cylinder&amp;#123;public:	float length, width, heigth;	float Input();	float Volume()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++习题 1">
-<meta property="og:url" content="http://yoursite.com/2019/10/07/c-习题-1/index.html">
+<meta property="og:title" content="c++习题(2)">
+<meta property="og:url" content="http://yoursite.com/2019/10/10/c-习题-2/index.html">
 <meta property="og:site_name" content="Luo Da Xiao">
-<meta property="og:description" content="第一章 12345678910111213141516171819202122232425262728293031#include &amp;lt;iostream&amp;gt;using namespace std;template&amp;lt;typename T&amp;gt;T sort(T &amp;amp;x,T &amp;amp;y,T &amp;amp;z)&amp;#123;	T temp;	T a[3] = &amp;#123; x,y,z &amp;">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839#include &amp;lt;iostream&amp;gt;using namespace std;class Cylinder&amp;#123;public:	float length, width, heigth;	float Input();	float Volume()">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-07T09:19:00.613Z">
+<meta property="og:updated_time" content="2019-10-10T07:45:01.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c++习题 1">
-<meta name="twitter:description" content="第一章 12345678910111213141516171819202122232425262728293031#include &amp;lt;iostream&amp;gt;using namespace std;template&amp;lt;typename T&amp;gt;T sort(T &amp;amp;x,T &amp;amp;y,T &amp;amp;z)&amp;#123;	T temp;	T a[3] = &amp;#123; x,y,z &amp;">
+<meta name="twitter:title" content="c++习题(2)">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839#include &amp;lt;iostream&amp;gt;using namespace std;class Cylinder&amp;#123;public:	float length, width, heigth;	float Input();	float Volume()">
   
     <link rel="alternative" href="/atom.xml" title="Luo Da Xiao" type="application/atom+xml">
   
@@ -167,30 +166,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-c-习题-1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-c-习题-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      c++习题 1
+      c++习题(2)
     </h1>
   
 
         
-        <a href="/2019/10/07/c-习题-1/" class="archive-article-date">
-  	<time datetime="2019-10-07T09:14:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-07</time>
+        <a href="/2019/10/10/c-习题-2/" class="archive-article-date">
+  	<time datetime="2019-10-10T07:44:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第一章</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">sort</span><span class="params">(T &amp;x,T &amp;y,T &amp;z)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp;</span><br><span class="line">	T a[<span class="number">3</span>] = &#123; x,y,z &#125;;</span><br><span class="line">	<span class="keyword">int</span> len=<span class="number">3</span>, i, j;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++)</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = a[j]; a[j] = a[j + <span class="number">1</span>]; a[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"排序为："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; a[<span class="number">0</span>]&lt;&lt;<span class="string">" "</span> &lt;&lt; a[<span class="number">1</span>] &lt;&lt;<span class="string">" "</span>&lt;&lt; a[<span class="number">2</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,y,z;</span><br><span class="line">	<span class="comment">//float x, y, z;</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"请输入三个数："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; z;</span><br><span class="line">	sort(x,y,z);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">sort</span><span class="params">(T a[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp;</span><br><span class="line">	<span class="keyword">int</span> i, j, len=<span class="keyword">sizeof</span>(a)<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span> ; i &lt; len<span class="number">-1</span>; i++)</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = a[j]; a[j] = a[j + <span class="number">1</span>]; a[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[] = &#123; <span class="number">5</span>,<span class="number">9</span>,<span class="number">1</span> &#125;;</span><br><span class="line">	sort(a);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cylinder</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">float</span> length, width, heigth;</span><br><span class="line">	<span class="function"><span class="keyword">float</span> <span class="title">Input</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">float</span> <span class="title">Volume</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">float</span> <span class="title">ShowVolume</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">float</span> Cylinder::Input(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; length &gt;&gt; width &gt;&gt; heigth;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">float</span> Cylinder::Volume()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> length * width*heigth;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">float</span> Cylinder::ShowVolume(<span class="keyword">void</span>)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; length * width*heigth &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	Cylinder cy1, cy2, cy3;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"分别输入三个长方柱体的长宽高,每个输入结束以回车结尾："</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	cy1.Input(); cy2.Input(); cy3.Input();</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"三个柱体的体积分别为："</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	cy1.ShowVolume();</span><br><span class="line">	cy2.ShowVolume();</span><br><span class="line">	cy3.ShowVolume();</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -201,36 +197,10 @@
     
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       <span id="busuanzi_container_page_pv">
       |阅读量：<span id="busuanzi_value_page_pv"></span>次
     </span>
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
     
@@ -280,7 +250,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/07/c-习题-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/10/c-习题-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +264,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/08/C-笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C++笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/17/数学建模国赛小结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数学建模国赛小结</div>
+    <a href="/2019/10/08/C-笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
