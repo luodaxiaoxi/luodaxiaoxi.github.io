@@ -164,6 +164,207 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-c-实验一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/31/c-实验一/">c++实验一</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/31/c-实验一/" class="archive-article-date">
+  	<time datetime="2019-10-31T06:42:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="实验二-C-对C-的扩充"><a href="#实验二-C-对C-的扩充" class="headerlink" title="实验二 C++对C 的扩充"></a>实验二 C++对C 的扩充</h1><h2 id="2-1-实验目的"><a href="#2-1-实验目的" class="headerlink" title="2.1 实验目的"></a>2.1 实验目的</h2><p>1．进一步了解和熟悉VC++6.0开发环境，学会在VC++6.0环境下调试程序；</p>
+<p>2．熟悉C++中简单的标准输入输出函数的实用；</p>
+<p>3．理解const修饰符的作用，并学会应用const修饰符；</p>
+<p>4．理解内置（内联）函数的优缺点并学会使用内置函数；</p>
+<p>5．理解和使用函数重载以及带默认参数的函数；</p>
+<p>6．使用new和delete进行动态内存管理；</p>
+<p>7．理解和使用引用。</p>
+<h2 id="2-2-实验内容"><a href="#2-2-实验内容" class="headerlink" title="2.2 实验内容"></a>2.2 实验内容</h2><h3 id="2-2-1-程序阅读"><a href="#2-2-1-程序阅读" class="headerlink" title="2.2.1 程序阅读"></a>2.2.1 程序阅读</h3><p><strong>1**</strong>．理解下面的程序，并在VC++6.0<strong>**下运行查看结果，回答程序后面的问题。</strong></p>
+<p>`#include <iostream>`</iostream></p>
+<p><code>using namespace std;</code></p>
+<p><code>int max_def(int x, int y)</code></p>
+<p><code>{</code></p>
+<p>​    <code>return (x&gt;y?x:y);</code></p>
+<p><code>}</code></p>
+<p><code>int max_def(int x, int y, int z)</code></p>
+<p><code>{</code></p>
+<p>​    <code>int temp = 0;</code></p>
+<p>​    <code>return (temp=(x&gt;y?x:y))&gt;z?temp:z;</code></p>
+<p><code>}</code></p>
+<p><code>double max_def(double x, double y)</code></p>
+<p><code>{</code></p>
+<p>​    <code>return (x&gt;y?x:y);</code></p>
+<p><code>}</code></p>
+<p><code>int main()</code></p>
+<p><code>{</code></p>
+<p>​    <code>int x1 = 0;</code></p>
+<p>​    <code>int x2 = 0;</code></p>
+<p>​    <code>double d1 = 0.0;</code></p>
+<p>​    <code>double d2 = 0.0;</code></p>
+<p>​    <code>x1 = max_def(5,6);</code></p>
+<p>​    <code>x2 = max_def(2,3,4);</code></p>
+<p>​    <code>d1 = max_def(2.1,5.6);</code></p>
+<p>​    <code>d2 = max_def(12.3,3.4,7.8);-----------------------------------------------------①</code></p>
+<p>​    <code>cout&lt;&lt;&quot;x1=&quot;&lt;&lt;x1&lt;&lt;endl;</code></p>
+<p>​    <code>cout&lt;&lt;&quot;x2=&quot;&lt;&lt;x2&lt;&lt;endl;</code></p>
+<p>​    <code>cout&lt;&lt;&quot;d1=&quot;&lt;&lt;d1&lt;&lt;endl;</code></p>
+<p>​    <code>cout&lt;&lt;&quot;d2=&quot;&lt;&lt;d2&lt;&lt;endl;--------------------------------------------------------②</code></p>
+<p>​    <code>return 1;</code></p>
+<p><code>}</code></p>
+<p><strong>问题一</strong>：上述程序的输出结果是什么？</p>
+<p><strong>答：</strong></p>
+<p><strong>x1=6</strong></p>
+<p><strong>x2=4</strong></p>
+<p><strong>d1=5.6</strong></p>
+<p><strong>d2=12</strong></p>
+<p><strong>问题二</strong>：哪些情况可以参与函数的重载？</p>
+<p><strong>答：</strong></p>
+<p><strong>参数类型改变，参数个数改变</strong></p>
+<p><strong>问题三</strong>：①处调用的是哪个函数？</p>
+<p><strong>答：</strong></p>
+<p><strong>double max_def(double x, double y)**</strong>；**</p>
+<p><strong>问题四：</strong>②处的输出结果为什么是d2=12，而不是d2=12.3？</p>
+<p><strong>答：</strong></p>
+<p><strong>因为调用的是int**</strong>类型的函数int max_def(int x, int y, int z)<strong><strong>，返回值为int</strong></strong>型**</p>
+<p><strong>2**</strong>．理解下面的程序，并在VC++6.0<strong>**下运行查看结果，回答程序后面的问题。</strong></p>
+<p>`#include <iostream>`</iostream></p>
+<p><code>using namespace std;</code></p>
+<p><code>int main()</code></p>
+<p><code>{</code></p>
+<p>​    <code>int *p1 = new int; -----------------------------------------------------①</code></p>
+<p>​    <code>int *p2 = new int(0); -----------------------------------------------------②</code></p>
+<p>​    <code>char *p3 = new char[64]; -----------------------------------------------------③</code></p>
+<p><code>return 1;</code></p>
+<p><code>}</code></p>
+<p>问题一：①、②、③处动态申请内存分别代表什么不一样的意思？</p>
+<p><strong>答：</strong></p>
+<p>1.申请了一个int类型的空间，，指针p1指向它的位置；</p>
+<p>2.申请了一个int类型的空间并初始化它，值为0，指针p2指向它的位置；</p>
+<p>3.申请了一块char型数组空间，长度为64，p3指向该数组首地址</p>
+<p>问题二：该程序存在什么隐患？改正该程序使隐患消除。</p>
+<p><strong>答：</strong></p>
+<p>动态内存未清除，可以在程序结尾delete它们。</p>
+<p> delete p1;</p>
+<p> delete p2;</p>
+<p> delete[] p3;</p>
+<p>3．理解下面的程序，并在VC++6.0下运行查看结果，回答程序后面的问题。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">int</span> temp = a;</span><br><span class="line"></span><br><span class="line">​    a = b;</span><br><span class="line"></span><br><span class="line">​    b = temp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">int</span> temp = *a;</span><br><span class="line"></span><br><span class="line">​    *a = *b;</span><br><span class="line"></span><br><span class="line">​    *b = temp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Before swap: i="</span>&lt;&lt;i&lt;&lt;<span class="string">",j="</span>&lt;&lt;j&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    swap(i,j); -----------------------------------------------------①</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"After the first swap: i="</span>&lt;&lt;i&lt;&lt;<span class="string">",j="</span>&lt;&lt;j&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    swap(&amp;i,&amp;j); -----------------------------------------------------②</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"After the second swap: i="</span>&lt;&lt;i&lt;&lt;<span class="string">",j="</span>&lt;&lt;j&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>问题一：上述程序的输出结果是什么？</p>
+<p><strong>答：</strong></p>
+<p>Before swap: i=5,j=10</p>
+<p>After the first swap: i=5,j=10</p>
+<p>After the second swap: i=10 ,j=5</p>
+<p>问题二：①处函数调用后并不能实现两个数的交换，而②处却可以，为什么？</p>
+<p><strong>答：</strong></p>
+<p>因为1处只是对函数里的a,b进行了赋值，在函数里面进行了交换，而对函数外面的a,b无影响；2处利用指针，传入参数的地址，对参数进行了改变，故进行了交换。</p>
+<p>问题三：②处调用的是哪个重载函数？</p>
+<p><strong>答：</strong></p>
+<p>调用的是void swap(int *a, int *b)；</p>
+<h3 id="2-2-2-程序设计"><a href="#2-2-2-程序设计" class="headerlink" title="2.2.2 程序设计"></a>2.2.2 程序设计</h3><p>1．使用函数重载的方法定义两个重名函数，分别求出整形数平面间两点间距离和双精度平面间两点间距离，如果没有输入第二点的坐标则默认为圆点（0,0）。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">\<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">length</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">double</span> b, <span class="keyword">double</span> c, <span class="keyword">double</span> d)</span> <span class="comment">//双精度，输入两个坐标</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">double</span> len;</span><br><span class="line"></span><br><span class="line">​    len = <span class="built_in">sqrt</span>((c - a)*(c - a) + (d - b)*(d - b));</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> len;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">length</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c, <span class="keyword">int</span> d)</span>            <span class="comment">//整型，输入两个坐标</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">int</span> len;</span><br><span class="line"></span><br><span class="line">​    len = <span class="built_in">sqrt</span>((c - a)*(c - a) + (d - b)*(d - b));</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> len;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">length</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span>               <span class="comment">//双精度，输入一个坐标</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">double</span> len;</span><br><span class="line"></span><br><span class="line">​    len = <span class="built_in">sqrt</span>(a*a + b * b);</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> len;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">length</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span>                        <span class="comment">//整型，输入一个坐标</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">int</span> len;</span><br><span class="line"></span><br><span class="line">​    len = <span class="built_in">sqrt</span>(a*a + b * b);</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> len;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">int</span> a, b, c, d;</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;</span><br><span class="line"></span><br><span class="line">​    length(a, b, c, d);</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2．设计一个函数：exchange(float x, float y, float z)，当调用exchange(a,b,c)时，将a的内容赋值给b，b的内容赋值给c，c的内容赋值给a，要求采用引用的方式来实现。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">\<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">exchange</span><span class="params">(<span class="keyword">float</span> &amp;a, <span class="keyword">float</span> &amp;b, <span class="keyword">float</span> &amp;c)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">float</span> temp;</span><br><span class="line"></span><br><span class="line">​    temp = a; a = c; c = b; b = temp;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">float</span> a, b, c;</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line"></span><br><span class="line">​    exchange(a, b, c);</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cout</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-思考题"><a href="#2-3-思考题" class="headerlink" title="2.3 思考题"></a>2.3 思考题</h2><p>1．自己设计一个程序，测试const的三种用法：指向常量的指针，常指针，指向常量的常指针。</p>
+<p>#include<iostream></iostream></p>
+<p>using namespace std;</p>
+<p>int main()</p>
+<p>{</p>
+<p>​    int a = 2;</p>
+<p>​    const int *p=int(0);           //指向常量的指针，地址可变，值不可变</p>
+<p>​    int* const p1=&a;            //常指针，地址不可变，值可变</p>
+<p>​    const int const*p2;        //指向常量的常指针，地址和数值不可变</p>
+<p>​    return 0;</p>
+<p>}</p>
+<p>2．编写一个函数，实现两个字符串变量的交换，要求参数用引用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"></span><br><span class="line">\<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span> &amp;ch1, <span class="keyword">char</span> &amp;ch2)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">char</span> temp;</span><br><span class="line"></span><br><span class="line">​    temp = ch1; ch1 = ch2; ch2 = temp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">​    <span class="comment">//限制字符串长度为100，进行交换</span></span><br><span class="line"></span><br><span class="line">​    <span class="keyword">char</span> ch1[<span class="number">100</span>], ch2[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cin</span> &gt;&gt; ch1;</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cin</span> &gt;&gt; ch2;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)</span><br><span class="line"></span><br><span class="line">​       swap(ch1[i], ch2[i]);</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cout</span> &lt;&lt; ch1 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">​    <span class="built_in">cout</span> &lt;&lt; ch2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">​    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">    
+    
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+      |阅读量：<span id="busuanzi_value_page_pv"></span>次
+    </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/31/c-实验一/">查看全文 >></a>
+        </p>
+      
+    
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C-作业-3-修改顺序表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -697,11 +898,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">写作</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">写作</a>
         		</li>
       		
 		</ul>
@@ -1104,118 +1305,6 @@
 
 
   
-    <article id="post-SPSS回归分析8-3笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/SPSS回归分析8-3笔记/">SPSS回归分析8.3笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/04/SPSS回归分析8-3笔记/" class="archive-article-date">
-  	<time datetime="2019-08-04T09:34:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="SPSS回归分析8-3笔记"><a href="#SPSS回归分析8-3笔记" class="headerlink" title="SPSS回归分析8.3笔记"></a>SPSS回归分析8.3笔记</h2><hr>
-<p>这里是采用了逐步回归的方式进行多元线性回归。</p>
-<hr>
-<p>在<strong>分析-&gt;线性-&gt;统计 **中可以勾选</strong>置信区间**,看每个系数的区间估计，若R方很小且置信区间包含零点，则该模型要考虑可不可以用了。</p>
-<p>关于置信区间。置信区间就是参数估计的一种，参数估计包括点估计和区间估计，一般来说点估计用的不多因为误差较大，而区间估计得到的就是一个置信区间，它一般会有一个置信度的问题，一般的软件(如MATLAB)都是默认为95%，如果某个参数的估计时，置信区间中存在零点，说明这个系数的估计是不可靠的。(见姜启源322页及323页改进的模型)</p>
-<h4 id="这个表主要看R的值。"><a href="#这个表主要看R的值。" class="headerlink" title="这个表主要看R的值。"></a>这个表主要看R的值。</h4><p><img src="D:%5CUsers%5C44293%5CDesktop%5Cblog%5Csource%5Casserts%5C1564907955362.png" alt="1564907955362"></p>
-<p>​    </p>
-<p>R表示拟合优度（goodness of fit），它是用来衡量估计的模型对观测值的拟合程度。它的值越接近1说明模型越好。逐步回归发现R值逐渐变大，模型越来越好。在数学建模中一般要使R&gt;0.8或0.9。</p>
-<hr>
-<h4 id="表Anova表示方差分析结果"><a href="#表Anova表示方差分析结果" class="headerlink" title="表Anova表示方差分析结果"></a>表Anova表示方差分析结果</h4><p><img src="D:%5CUsers%5C44293%5CDesktop%5Cblog%5Csource%5Casserts%5C1564908350546.png" alt="1564908350546"></p>
-<p>​    显著性即<strong>fig</strong>，当<strong>fig</strong>&lt;0.05表示显著相关，当它&lt;0.01表示高度相关。</p>
-<p>​    F的值是回归方程的显著性检验，表示的是模型中被解释变量与所有解释变量之间的线性关系在总体上是否显著做出推断。若F&gt;Fa(k,n-k-1)，则拒绝原假设，即认为列入模型的各个解释变量联合起来对被解释变量有显著影响，反之，则无显著影响。</p>
-<p>​    其中，k是自变量个数，n为样本容量，n-k-1为自由度。一般数理统计课本中都有F分布表，a表示的显著性水平（一般取0.05），在EXCEL中也能查表。在公式区输入：=FINV(0.05,4，6)，在单元格中即出现4.533677，表中的F值显著大于这个值，则认为各个解释变量对因变量有显著影响。</p>
-<hr>
-<h4 id="看各个系数"><a href="#看各个系数" class="headerlink" title="看各个系数"></a>看各个系数</h4><p><img src="D:%5CUsers%5C44293%5CDesktop%5Cblog%5Csource%5Casserts%5C1564909113844.png" alt="1564909113844"></p>
-<p>这里fig同上。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">    
-    
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SPSS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">回归分析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-      |阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/04/SPSS回归分析8-3笔记/">查看全文 >></a>
-        </p>
-      
-    
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1338,6 +1427,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
               </li>
              
@@ -1350,10 +1443,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
               </li>
              
@@ -1362,11 +1451,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">写作</a>
+                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数学建模</a>
+                <a href="javascript:void(0)" class="js-tag color3">写作</a>
               </li>
             
             <div class="clearfix"></div>
