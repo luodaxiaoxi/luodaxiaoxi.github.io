@@ -164,6 +164,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C-习题（4）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/09/C-习题（4）/">C++习题（4）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/09/C-习题（4）/" class="archive-article-date">
+  	<time datetime="2019-11-09T05:24:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="3-定义一个Complex类"><a href="#3-定义一个Complex类" class="headerlink" title="3.定义一个Complex类"></a>3.定义一个Complex类</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">float</span> real;</span><br><span class="line">	<span class="keyword">float</span> imag;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Complex() &#123; real = <span class="number">0</span>; imag = <span class="number">0</span>; &#125;</span><br><span class="line">	Complex(<span class="keyword">float</span> r, <span class="keyword">float</span> i) &#123; real = r; imag = i; &#125;     <span class="comment">//构造函数</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123; <span class="built_in">cout</span> &lt;&lt; real &lt;&lt; <span class="string">"+"</span> &lt;&lt; imag &lt;&lt; <span class="string">"j"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line">	<span class="keyword">friend</span> Complex <span class="keyword">operator</span>+(Complex &amp;c1,Complex &amp;c2);		<span class="comment">//友元函数</span></span><br><span class="line">	<span class="keyword">friend</span> Complex <span class="keyword">operator</span>+(<span class="keyword">int</span> &amp;i, Complex &amp;c);</span><br><span class="line">	<span class="keyword">friend</span> Complex <span class="keyword">operator</span>+(Complex &amp;c, <span class="keyword">int</span> &amp;i);</span><br><span class="line">&#125;;</span><br><span class="line">Complex <span class="keyword">operator</span>+(<span class="keyword">int</span> &amp;i, Complex &amp;c)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> Complex(c.real + i, c.imag);</span><br><span class="line">&#125;</span><br><span class="line">Complex <span class="keyword">operator</span>+( Complex &amp;c,<span class="keyword">int</span> &amp;i )</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> Complex(c.real + i, c.imag);</span><br><span class="line">&#125;</span><br><span class="line">Complex <span class="keyword">operator</span>+(Complex &amp;c1, Complex &amp;c2)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> Complex(c1.real + c2.real, c1.imag + c2.imag);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Complex c(5, 6), c1(1, 1),c2,c3,c4;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">5</span>;</span><br><span class="line">	c2 = c + i;</span><br><span class="line">	c3 = i + c; c4 = c + c1;</span><br><span class="line">	c2.show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-实现矩阵相加"><a href="#4-实现矩阵相加" class="headerlink" title="4.实现矩阵相加"></a>4.实现矩阵相加</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> i,j,n,a[<span class="number">2</span>][<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        Complex();</span><br><span class="line">        Complex <span class="keyword">operator</span>+(Complex &amp;c);</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">()</span></span>;</span><br><span class="line">&#125; t1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Complex::Complex()</span><br><span class="line"> &#123;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)</span><br><span class="line"> a[i][j]=<span class="number">0</span>;</span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">void</span> Complex::input()</span><br><span class="line"> &#123;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">     <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)</span><br><span class="line">     <span class="built_in">cin</span>&gt;&gt;a[i][j];</span><br><span class="line"> &#125; </span><br><span class="line"> <span class="keyword">void</span> Complex::display()</span><br><span class="line"> &#123;</span><br><span class="line">    n=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">      <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)</span><br><span class="line">      &#123;</span><br><span class="line">        n++;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;setw(<span class="number">5</span>)&lt;&lt;a[i][j];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line"> &#125;</span><br><span class="line">Complex Complex::<span class="keyword">operator</span>+(Complex &amp;c)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++) </span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++) </span><br><span class="line">    t1.a[i][j]=a[i][j]+c.a[i][j];</span><br><span class="line">    <span class="keyword">return</span> t1; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Complex t2,t3,t4;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入2*3个整数"</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    t2.input();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"请输入2*3个整数"</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    t3.input();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"t2"</span>;</span><br><span class="line">    t2.display();</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"t3"</span>;</span><br><span class="line">    t3.display();</span><br><span class="line">    t4=t2+t3;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"t4=t2+t3="</span>;</span><br><span class="line">    t4.display();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">    
+    
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+      |阅读量：<span id="busuanzi_value_page_pv"></span>次
+    </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/09/C-习题（4）/">查看全文 >></a>
+        </p>
+      
+    
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-c-实验一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1118,11 +1214,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
         		</li>
       		
 		</ul>
@@ -1147,135 +1243,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/08/GitHub-Desktop上传文件/">查看全文 >></a>
-        </p>
-      
-    
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-论文写作笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/05/论文写作笔记/">论文写作笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/05/论文写作笔记/" class="archive-article-date">
-  	<time datetime="2019-08-05T11:34:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="论文写作"><a href="#论文写作" class="headerlink" title="论文写作"></a>论文写作</h1><h2 id="一、评阅原则"><a href="#一、评阅原则" class="headerlink" title="一、评阅原则"></a>一、评阅原则</h2><p>假设的合理性，建模的创造性；</p>
-<p>结果的正确性，表述的清晰性。</p>
-<ul>
-<li>创造性：特别欣赏独树一帜，标新立异，<strong>但要合理</strong>。</li>
-<li>正确性：答案要有一定的精度，不能偏离“参考答案”很远。</li>
-<li>清晰性：摘要应理解为详细摘要，提纲挈领。</li>
-</ul>
-<h1 id="二、需要重视的问题"><a href="#二、需要重视的问题" class="headerlink" title="二、需要重视的问题"></a>二、需要重视的问题</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><ul>
-<li>字数控制在一页以内，半页以上；</li>
-<li>语言精炼，用词准确；</li>
-<li>阐述细致具体方法；</li>
-<li>列出主要结论；</li>
-<li>写出5-6个关键词。(方法、概念)</li>
-</ul>
-<p><strong>注：关键词用分号隔开，最后一个不加符号</strong></p>
-<h2 id="问题的引出"><a href="#问题的引出" class="headerlink" title="问题的引出"></a>问题的引出</h2><ol>
-<li>对竞赛题中可能的模糊概念、条件作出必要的澄清</li>
-<li>明确实际背景、已知条件、数据</li>
-</ol>
-<h2 id="问题的分析"><a href="#问题的分析" class="headerlink" title="问题的分析"></a>问题的分析</h2><p>​    讨论什么问题，需要建立什么样的模型、用什么方法来求解做出一个定性的描述。</p>
-<h2 id="模型的假设"><a href="#模型的假设" class="headerlink" title="模型的假设"></a>模型的假设</h2><ul>
-<li>严格、确切的数学语言表达</li>
-<li>假设应验证其合理性</li>
-<li>假设以3-6条为宜</li>
-</ul>
-<p><strong>例：假设题中所给数据准确无误(个别除外)</strong></p>
-<h2 id="符号说明"><a href="#符号说明" class="headerlink" title="符号说明"></a>符号说明</h2><p>三线表，列出全文通用符号</p>
-<p><strong>注：这里仅给出全文通用符号，其他符号在文中第一次出现时予以说明。</strong></p>
-<h2 id="模型的建立与求解"><a href="#模型的建立与求解" class="headerlink" title="模型的建立与求解"></a>模型的建立与求解</h2><h2 id="模型的评价与检验"><a href="#模型的评价与检验" class="headerlink" title="模型的评价与检验"></a>模型的评价与检验</h2><ol>
-<li>对结果的可靠性或误差分析</li>
-<li>灵敏度和稳定度分析</li>
-<li>对模型的客观评价，指出优越性和局限性</li>
-<li>提出可能的深化，推广建议</li>
-</ol>
-<h1 id="三、多个模型的取舍问题"><a href="#三、多个模型的取舍问题" class="headerlink" title="三、多个模型的取舍问题"></a>三、多个模型的取舍问题</h1><p>多个模型可选时，一至二个为宜；</p>
-<p>实际做，可有多个，在写时选最好的，其他模型放在推广中。</p>
-<p>$$<br>Y = \beta_{0} + \beta_{1}x_{1} + \beta_{2}x_{2} +\varepsilon_{0}\LaTeX<br>$$</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">    
-    
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数学建模</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-      |阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/05/论文写作笔记/">查看全文 >></a>
         </p>
       
     
@@ -1419,11 +1386,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,15 +1406,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">LaTeX</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
