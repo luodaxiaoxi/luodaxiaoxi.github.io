@@ -164,6 +164,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-c-实验四思考题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/14/c-实验四思考题/">c++实验四思考题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/14/c-实验四思考题/" class="archive-article-date">
+  	<time datetime="2019-11-14T07:30:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/*1．设计一个CStudent（学生）类，并使CStudent类具有以下特点：</span></span><br><span class="line"><span class="comment">	a．该类具有学生姓名、学号、程序设计、信号处理、数据结构三门课程的成绩；</span></span><br><span class="line"><span class="comment">	b．学生全部信息由键盘输入，以提高程序的适应性；</span></span><br><span class="line"><span class="comment">	c．通过成员函数统计学生平均成绩，当课程数量增加时，成员函数无须修改仍可以求取平均成绩；</span></span><br><span class="line"><span class="comment">	d．输出学生的基本信息、各科成绩与平均成绩；</span></span><br><span class="line"><span class="comment">	e．学生对象的定义采用对象数组实现；</span></span><br><span class="line"><span class="comment">	f．统计不及格学生人数。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CStudent</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> num;<span class="comment">//学号</span></span><br><span class="line">	<span class="built_in">string</span> name;<span class="comment">//姓名</span></span><br><span class="line">	<span class="keyword">int</span> cxsj_grad, xhcl_grad, sjjg_grad;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	CStudent() &#123; num = <span class="number">1111</span>; cxsj_grad = <span class="number">0</span>; xhcl_grad = <span class="number">0</span>; sjjg_grad = <span class="number">0</span>; name = <span class="string">"aaa"</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">xinxi_set</span><span class="params">()</span></span>;	<span class="comment">//输入信息</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">()</span></span>;		<span class="comment">//显示信息</span></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">average_grad</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">jige</span><span class="params">()</span></span>;			<span class="comment">//判断是否有未几个的科目，若有未及格科目返回1，否则返回0．</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">void</span> CStudent::xinxi_set()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt;<span class="built_in">endl</span>&lt;&lt; <span class="string">"依次输入学号、姓名、程序设计、信号处理、数据结构三门课程的成绩,分别以回车结尾"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; num &gt;&gt; name &gt;&gt; cxsj_grad &gt;&gt; xhcl_grad &gt;&gt; sjjg_grad;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> CStudent::Show()			<span class="comment">//显示信息</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"学号："</span> &lt;&lt; num &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"姓名："</span> &lt;&lt; name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"程序设计成绩："</span> &lt;&lt; cxsj_grad &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"信号处理成绩："</span> &lt;&lt; xhcl_grad &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"数据结构成绩："</span> &lt;&lt; sjjg_grad &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"平均成绩"</span> &lt;&lt; average_grad() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> CStudent::average_grad()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;cxsj_grad != <span class="number">0</span>)	n++;		</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;sjjg_grad != <span class="number">0</span>)	n++;	 </span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;xhcl_grad != <span class="number">0</span>)	n++;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">double</span>(cxsj_grad + sjjg_grad + xhcl_grad) / n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> CStudent::jige()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (xhcl_grad &lt; <span class="number">60</span> || sjjg_grad &lt; <span class="number">60</span> || cxsj_grad &lt; <span class="number">60</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	CStudent s[<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">		s[i].xinxi_set();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">		s[i].Show();</span><br><span class="line">	<span class="keyword">int</span> number=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		number += s[i].jige();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>&lt;&lt;<span class="string">"不及格人数为："</span>&lt;&lt;number &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">    
+    
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      <span id="busuanzi_container_page_pv">
+      |阅读量：<span id="busuanzi_value_page_pv"></span>次
+    </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/14/c-实验四思考题/">查看全文 >></a>
+        </p>
+      
+    
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C-习题（4）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1173,105 +1267,6 @@
 
 
   
-    <article id="post-GitHub-Desktop上传文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/08/GitHub-Desktop上传文件/">GitHub Desktop上传文件</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/08/GitHub-Desktop上传文件/" class="archive-article-date">
-  	<time datetime="2019-08-08T12:33:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="GitHub-Desktop上传文件至GitHub"><a href="#GitHub-Desktop上传文件至GitHub" class="headerlink" title="GitHub Desktop上传文件至GitHub"></a>GitHub Desktop上传文件至GitHub</h2><hr>
-<h3 id="首先在GitHub新建一个repository"><a href="#首先在GitHub新建一个repository" class="headerlink" title="首先在GitHub新建一个repository"></a>首先在GitHub新建一个repository</h3><p>​    在GitHub建一个仓库，命名好加或者不加describe都行。</p>
-<h3 id="打开GitHub-Desktop"><a href="#打开GitHub-Desktop" class="headerlink" title="打开GitHub Desktop"></a>打开GitHub Desktop</h3><p>​    左上角Current repository，点开然后点击add会出现Clone repository，create new repository等，点击Clone repository并选择你刚刚创建的，然后等它克隆就行。</p>
-<h3 id="进入GitHub-desktop文件夹"><a href="#进入GitHub-desktop文件夹" class="headerlink" title="进入GitHub desktop文件夹"></a>进入GitHub desktop文件夹</h3><p>​    会发现这里出现了你刚刚克隆的那个仓库，只需要把像上传的文件或文件夹添加进这个仓库，再打开GitHub desktop,就会发现这里面添加进来了。现在只需填写summary然后commit to master，再fetch origin就把你的东西上传到你的GitHub里了。</p>
-<p>附我的GitHub，欢迎star</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/luodaxiaoxi/file_shumo</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">    
-    
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      <span id="busuanzi_container_page_pv">
-      |阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/08/GitHub-Desktop上传文件/">查看全文 >></a>
-        </p>
-      
-    
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1386,6 +1381,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
@@ -1394,7 +1393,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1406,15 +1405,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">初学博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
