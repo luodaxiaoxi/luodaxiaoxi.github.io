@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C++作业(3)--修改顺序表 | Luo Da Xiao</title>
+  <title>Archives: 2020 | Luo Da Xiao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="链表实际上就是一个数组，自己写一个类来操作它．下面是第三次作业，都写了比较详细的注释，大概看得懂． 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class SeqList&amp;#123;protected:	Da">
-<meta name="keywords" content="c++,代码">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++作业(3)--修改顺序表">
-<meta property="og:url" content="http://yoursite.com/2019/10/28/C-作业-3-修改顺序表/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Luo Da Xiao">
+<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
 <meta property="og:site_name" content="Luo Da Xiao">
-<meta property="og:description" content="链表实际上就是一个数组，自己写一个类来操作它．下面是第三次作业，都写了比较详细的注释，大概看得懂． 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class SeqList&amp;#123;protected:	Da">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-28T12:34:34.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++作业(3)--修改顺序表">
-<meta name="twitter:description" content="链表实际上就是一个数组，自己写一个类来操作它．下面是第三次作业，都写了比较详细的注释，大概看得懂． 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class SeqList&amp;#123;protected:	Da">
+<meta name="twitter:title" content="Luo Da Xiao">
   
     <link rel="alternative" href="/atom.xml" title="Luo Da Xiao" type="application/atom+xml">
   
@@ -167,47 +162,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C-作业-3-修改顺序表" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      C++作业(3)--修改顺序表
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/01/04/课程设计上位机PythonLinkStm32/" class="archive-article-date">
+  	<time datetime="2020-01-04T05:03:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/01/04/课程设计上位机PythonLinkStm32/">课程设计上位机PythonLinkStm32</a>
     </h1>
   
 
-        
-        <a href="/2019/10/28/C-作业-3-修改顺序表/" class="archive-article-date">
-  	<time datetime="2019-10-28T12:29:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>链表实际上就是一个数组，自己写一个类来操作它．下面是第三次作业，都写了比较详细的注释，大概看得懂．</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SeqList</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	DataType *<span class="built_in">list</span>;</span><br><span class="line">	<span class="keyword">int</span> MaxSize;</span><br><span class="line">	<span class="keyword">int</span> Size;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	SeqList(<span class="keyword">int</span> max)		<span class="comment">//构造函数</span></span><br><span class="line">	&#123;</span><br><span class="line">		MaxSize = max;</span><br><span class="line">		Size = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">list</span> = <span class="keyword">new</span> DataType[MaxSize];</span><br><span class="line">	&#125;</span><br><span class="line">	~SeqList(<span class="keyword">void</span>) &#123;&#125;		<span class="comment">//析构函数</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Size</span><span class="params">(<span class="keyword">void</span>)</span> <span class="keyword">const</span>		<span class="comment">//Size</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> MaxSize;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">const</span> DataType &amp;item, <span class="keyword">int</span> i)</span>		<span class="comment">//在位置i插入元素item</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (Size == MaxSize)				<span class="comment">//扩容．即链表满了，MaxSize+1</span></span><br><span class="line">		&#123;</span><br><span class="line">			list1 = <span class="keyword">new</span> DataType[MaxSize];</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; MaxSize; j++)			<span class="comment">//先存下原链表的值</span></span><br><span class="line">				list1[j] = <span class="built_in">list</span>[j];</span><br><span class="line">			MaxSize++;</span><br><span class="line">			SeqList(MaxSize);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; MaxSize<span class="number">-1</span>; j++)			<span class="comment">//给新链表赋值</span></span><br><span class="line">				<span class="built_in">list</span>[j] = list1[j];</span><br><span class="line">			<span class="keyword">delete</span>[] list1;						<span class="comment">//清除中间链表空间</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; <span class="number">0</span>)  <span class="built_in">cout</span> &lt;&lt; <span class="string">"越界"</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i &gt; Size<span class="number">-1</span>) <span class="built_in">list</span>[Size] = item;			<span class="comment">//若越上界则插到最后一个后面</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;													<span class="comment">//若在中间，则移位</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = Size; j &gt; i; j--)</span><br><span class="line">				<span class="built_in">list</span>[j] = <span class="built_in">list</span>[j - <span class="number">1</span>];</span><br><span class="line">			<span class="built_in">list</span>[i] = item;</span><br><span class="line">			Size++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> x)</span>				<span class="comment">//删除值为X的元素</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> index;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; Size; j++)				<span class="comment">//找到x的坐标index</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">list</span>[j] == x)</span><br><span class="line">				index = j;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (Size == <span class="number">0</span>)	<span class="built_in">cout</span> &lt;&lt; <span class="string">"顺序表长度为0，不存在值为x的元素"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (i&lt;<span class="number">0</span> || i&gt;Size - <span class="number">1</span>)		<span class="built_in">cout</span> &lt;&lt; <span class="string">"越界"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="comment">//删除位于index的元素</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = index + <span class="number">1</span>; j &lt; Size - <span class="number">1</span>; j++)		<span class="comment">//删除元素后左移</span></span><br><span class="line">				<span class="built_in">list</span>[j] = <span class="built_in">list</span>[j + <span class="number">1</span>];</span><br><span class="line">			Size--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">    
-    
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">代码</a>
         		</li>
@@ -215,10 +203,7 @@
 		</ul>
 	</div>
 
-      <span id="busuanzi_container_page_pv">
-      |阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -231,113 +216,17 @@
 	</div>
 
 
-      
-    
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/28/C-作业-3-修改顺序表/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/10/31/c-实验一/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          c++实验一
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/10/23/2018年C语言程序设计大赛解答-前五题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2018年C语言程序设计大赛解答(前五题)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -369,8 +258,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
